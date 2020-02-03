@@ -31,15 +31,15 @@ const byte PIN_DIO_O1 = 9;   // define DIO pin (any digital pin)
 const byte PIN_DIO_O2 = 10;
 const byte PIN_DIO_O3 = 11;
 
-SevenSegmentFun      green1(PIN_CLK_Green, PIN_DIO_G1);
-SevenSegmentFun       green2(PIN_CLK_Green, PIN_DIO_G2);
-SevenSegmentFun     green3(PIN_CLK_Green, PIN_DIO_G3);
-SevenSegmentFun      red1(PIN_CLK_Red, PIN_DIO_R1);
-SevenSegmentFun       red2(PIN_CLK_Red, PIN_DIO_R2);
-SevenSegmentFun     red3(PIN_CLK_Red, PIN_DIO_R3);
-SevenSegmentFun           orange1(PIN_CLK_Orange, PIN_DIO_O1); // SegmentExtended pour utiliser la methode "PrintTime"
-SevenSegmentFun        orange2(PIN_CLK_Orange, PIN_DIO_O2); //SegmentTM1637 pour utiliser la methode "print" permet d'enlever les ":" entre les chiffres
-SevenSegmentFun       orange3(PIN_CLK_Orange, PIN_DIO_O3);
+SevenSegmentFun green1(PIN_CLK_Green, PIN_DIO_G1);
+SevenSegmentFun green2(PIN_CLK_Green, PIN_DIO_G2);
+SevenSegmentFun green3(PIN_CLK_Green, PIN_DIO_G3);
+SevenSegmentFun red1(PIN_CLK_Red, PIN_DIO_R1);
+SevenSegmentFun red2(PIN_CLK_Red, PIN_DIO_R2);
+SevenSegmentFun red3(PIN_CLK_Red, PIN_DIO_R3);
+SevenSegmentFun orange1(PIN_CLK_Orange, PIN_DIO_O1); // SegmentExtended pour utiliser la methode "PrintTime"
+SevenSegmentFun orange2(PIN_CLK_Orange, PIN_DIO_O2); //SegmentTM1637 pour utiliser la methode "print" permet d'enlever les ":" entre les chiffres
+SevenSegmentFun orange3(PIN_CLK_Orange, PIN_DIO_O3);
 
 
 
