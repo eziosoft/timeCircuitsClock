@@ -44,8 +44,6 @@ SevenSegmentFun orange3(PIN_CLK_Orange, PIN_DIO_O3);
 
 
 void setup() {
-
-
   pinMode(PIN_CLK_Red, OUTPUT);
   pinMode(PIN_DIO_R1, OUTPUT);
   pinMode(PIN_DIO_R2, OUTPUT);
@@ -59,6 +57,8 @@ void setup() {
   pinMode(PIN_DIO_O2, OUTPUT);
   pinMode(PIN_DIO_O3, OUTPUT);
 
+
+  
 
   red1.begin();
   red2.begin();
@@ -83,6 +83,10 @@ void setup() {
   orange1.setBacklight(backlightO);
   orange2.setBacklight(backlightO);
   orange3.setBacklight(backlightO);
+
+  red1.print("sEt");
+  setTimeSetup();
+  
 
   Serial.begin(9600);
   if (!rtc.begin()) {
