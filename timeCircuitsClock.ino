@@ -4,7 +4,7 @@
 #include "SevenSegmentExtended.h"
 #include "SevenSegmentFun.h"
 
-RTC_DS3231 rtc;
+RTC_DS1307 rtc;
 DateTime now;
 
 char data[4];//data buffer for sprinf
@@ -58,7 +58,7 @@ void setup() {
   pinMode(PIN_DIO_O3, OUTPUT);
 
 
-  
+
 
   red1.begin();
   red2.begin();
@@ -86,7 +86,7 @@ void setup() {
 
   red1.print("sEt");
   setTimeSetup();
-  
+
 
   Serial.begin(9600);
   if (!rtc.begin()) {
@@ -96,12 +96,15 @@ void setup() {
     while (1);
   }
 
-  if (rtc.lostPower()) {
+  if (! RTC.isrunning()) {
     Serial.println("RTC lost power, lets set the time!");
     // sets date and time to the time when the sketch was compiled
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 
+
+  int tempC = DS3231_get_treg();
+  Serial.println(tempC);
   Serial.println("Start");
   startPlayback(); // play startup sound
 }
@@ -123,7 +126,7 @@ void loop() {
   orange3.printTime(now.hour(), now.minute(), true);
 
 
-  if ( now.minute() == 0 && now.second() == 0)
+  if ( now.minute() == 0 && now.second() == 0) //do animation and sound every hour
   {
     red1.snake(1);
     red2.snake(1);
@@ -137,6 +140,7 @@ void loop() {
     orange2.snake(1);
     orange3.snake(1);
 
+    startPlayback(); // play startup sound
   }
 
   delay(500);
